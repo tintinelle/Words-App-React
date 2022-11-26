@@ -1,0 +1,108 @@
+[{
+        "id": "12516",
+        "english": "dog",
+        "transcription": "[dɒg]",
+        "russian": "собака",
+        "tags": "животные",
+        "tags_json": "[\"u0436u0438u0432u043eu0442u043du044bu0435\"]"
+    },
+    {
+        "id": "13054",
+        "english": "cat",
+        "transcription": "[kæt]",
+        "russian": "кошка",
+        "tags": "животные",
+        "tags_json": "[\"u0436u0438u0432u043eu0442u043du044bu0435\"]"
+    }, {
+        "id": "13067",
+        "english": "corn",
+        "transcription": "[kɔːrn]",
+        "russian": "кукуруза",
+        "tags": "овощи",
+        "tags_json": "[\"u043eu0432u043eu0449u0438\"]"
+    }, {
+        "id": "13069",
+        "english": "butterfly ",
+        "transcription": "[ˈbʌtərflaɪ]",
+        "russian": "бабочка",
+        "tags": "насекомое",
+        "tags_json": "[\"u043du0430u0441u0435u043au043eu043cu043eu0435\"]"
+    }, {
+        "id": "13133",
+        "english": "hedgehog",
+        "transcription": "[ˈhedʒ.hɒɡ]",
+        "russian": "ежик",
+        "tags": "животные",
+        "tags_json": "[\"u0436u0438u0432u043eu0442u043du044bu0435\"]"
+    }, {
+        "id": "13144",
+        "english": "kid",
+        "transcription": "[kid]",
+        "russian": "ребенок",
+        "tags": "семья",
+        "tags_json": "[\"u0441u0435u043cu044cu044f\"]"
+    }, {
+        "id": "13146",
+        "english": "mother",
+        "transcription": "[ ˈmʌð.ə r] ",
+        "russian": "мать",
+        "tags": "семья",
+        "tags_json": "[\"u0441u0435u043cu044cu044f\"]"
+    }, {
+        "id": "13147",
+        "english": "father",
+        "transcription": "[ ˈfɑː.ðə r] ",
+        "russian": "отец",
+        "tags": "семья",
+        "tags_json": "[\"u0441u0435u043cu044cu044f\"]"
+    }, {
+        "id": "13148",
+        "english": "family",
+        "transcription": "[ ˈfæm. ə l.i ]",
+        "russian": "семья",
+        "tags": "семья",
+        "tags_json": "[\"u0441u0435u043cu044cu044f\"]"
+    }, {
+        "id": "13158",
+        "english": "accelerator\t",
+        "transcription": "[ əkˈseləreɪtə ]\t",
+        "russian": "акселератор",
+        "tags": "автомобиль",
+        "tags_json": "[\"u0430u0432u0442u043eu043cu043eu0431u0438u043bu044c\"]"
+    }, {
+        "id": "13163",
+        "english": "brake\t",
+        "transcription": "[ breɪk ]\t",
+        "russian": "тормоз",
+        "tags": "автомобиль",
+        "tags_json": "[\"u0430u0432u0442u043eu043cu043eu0431u0438u043bu044c\"]"
+    }, {
+        "id": "13164",
+        "english": "brake fluid\t\t",
+        "transcription": "[ breɪk ˈfluːɪd ]",
+        "russian": "тормозная жидкость",
+        "tags": "автомобиль",
+        "tags_json": "[\"u0430u0432u0442u043eu043cu043eu0431u0438u043bu044c\"]"
+    }, {
+        "id": "13165",
+        "english": "brake light\t",
+        "transcription": "[ breɪk laɪt ]\t",
+        "russian": "стоп-сигнал",
+        "tags": "автомобиль",
+        "tags_json": "[\"u0430u0432u0442u043eu043cu043eu0431u0438u043bu044c\"]"
+    }, {
+        "id": "13166",
+        "english": "bulbs\t",
+        "transcription": "[ bʌlbz ]\t",
+        "russian": "лампы",
+        "tags": "автомобиль",
+        "tags_json": "[\"u0430u0432u0442u043eu043cu043eu0431u0438u043bu044c\"]"
+    }, {
+        "id": "13168",
+        "english": "clutch\t",
+        "transcription": "[ klʌtʃ ]\t",
+        "russian": "сцепление",
+        "tags": "автомобиль",
+        "tags_json": "[\"u0430u0432u0442u043eu043cu043eu0431u0438u043bu044c\"]"
+    }
+]

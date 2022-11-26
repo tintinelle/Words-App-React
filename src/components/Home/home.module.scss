@@ -1,0 +1,33 @@
+@import './../../style/vars.scss';
+@import './../../style/mixins.scss';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 34rem;
+
+    background-image: url("../../../public/images/Group.png");
+    background-size: cover;
+}
+
+.title {
+    font-size: 5em;
+}
+
+.about {
+    width: 40%;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 2em;
+}
+
+.button {
+    @include button;
+    width: 10%;
+
+    &:hover {
+        width: 12%;
+        font-size: larger;
+    }
+}

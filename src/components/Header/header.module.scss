@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appname {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+.logo {
+    width: 20%;
+}
+
+.text {}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    list-style-type: none;
+}
