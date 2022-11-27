@@ -1,9 +1,11 @@
-@mixin button {
-    padding: 15px;
+@mixin button ($width, $padding) {
+    width: $width;
+    padding: $padding;
     border: none;
     border-radius: 15px;
     font-size: 1em;
     font-weight: 700;
+    text-align: center;
     background-color: $button-dark;
     color: #fff;
 }

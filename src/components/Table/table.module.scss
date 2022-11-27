@@ -1,0 +1,36 @@
+@import './../../style/vars.scss';
+
+.container {
+    outline: 1px solid rgb(192, 108, 108);
+    background-image: url("../../../public/images/background-group.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.table {
+    width: 70%;
+    margin: auto;
+    border-radius: 15px;
+    border-spacing: 0;
+    line-height: 2em;
+    background-color: $accent-pastel;
+}
+
+.header {
+    background-color: $accent-vivid;
+    color: #fff;
+
+    th {    
+        font-weight: 600;
+        padding: 10px;
+        border-bottom: 1px solid #fff;
+
+        &:first-of-type {
+            border-top-left-radius: 15px;
+        }
+        &:last-of-type {
+            border-top-right-radius: 15px;
+        }
+
+    }
+}

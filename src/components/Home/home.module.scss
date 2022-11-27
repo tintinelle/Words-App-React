@@ -13,6 +13,7 @@
 
 .title {
     font-size: 5em;
+    color: $title-color;
 }
 
 .about {
@@ -20,14 +21,15 @@
     margin-bottom: 40px;
     text-align: center;
     line-height: 2em;
+    color: $text-color;
 }
 
 .button {
-    @include button;
-    width: 10%;
+    @include button(10%, 15px);
 
     &:hover {
         width: 12%;
         font-size: larger;
+        background-color: $button-light;
     }
 }

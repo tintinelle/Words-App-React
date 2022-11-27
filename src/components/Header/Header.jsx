@@ -6,8 +6,8 @@ export default function Header() {
       <div className={style.appname}>
         <img className={style.logo} src="images/logo.png" alt="logo"/>
         <div className={style.text}>
-          <p>Learn it!</p>
-          <p>English vocabulary cards</p>
+          <div>Learn it!</div>
+          <div>English vocabulary cards</div>
         </div>
       </div>
 
