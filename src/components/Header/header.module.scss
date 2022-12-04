@@ -39,8 +39,5 @@
 
     li {
         @include button(15%, 8px);
-        &:hover {
-            background-color: $button-light;
-        }
 }
 }

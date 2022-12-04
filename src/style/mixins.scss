@@ -8,4 +8,7 @@
     text-align: center;
     background-color: $button-dark;
     color: #fff;
+    &:hover {
+        background-color: $button-light;
+    }
 }

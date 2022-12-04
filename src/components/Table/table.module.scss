@@ -17,20 +17,15 @@
 }
 
 .header {
+    display: grid;
+    grid-template-columns: repeat(4,20%) 1fr 1fr;
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+
+    font-weight: 600;
+    text-align: center;
+
+    border-bottom: 1px solid #fff;
     background-color: $accent-vivid;
     color: #fff;
-
-    th {    
-        font-weight: 600;
-        padding: 10px;
-        border-bottom: 1px solid #fff;
-
-        &:first-of-type {
-            border-top-left-radius: 15px;
-        }
-        &:last-of-type {
-            border-top-right-radius: 15px;
-        }
-
-    }
 }

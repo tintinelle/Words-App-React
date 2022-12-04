@@ -1,0 +1,35 @@
+@import './../../../style/vars.scss';
+@import './../../../style/mixins.scss';
+
+.row {
+    color: $text-color;
+    display: grid;
+    grid-template-columns: repeat(4,20%) 1fr 1fr;
+    padding: 5px 10px;
+
+    font-weight: 400;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+
+    input {
+        width: 90%;
+        justify-self: center;
+        text-align: center;
+        border-color: $button-dark;
+    }
+}
+
+.button {
+    border: none;
+    background-color: inherit;
+    color: $button-dark;
+
+    &:hover {
+        color: $button-light;
+    }
+}
+
+.button_edit {
+    @include button (80%, 3px);
+    font-size: 0.9em;
+}

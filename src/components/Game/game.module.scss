@@ -1,0 +1,49 @@
+@import './../../style/vars.scss';
+@import './../../style/mixins.scss';
+
+.game {
+    min-height: 35rem;
+    background-image: url("../../../public/images/background-game.png");
+    // background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 38%;
+    min-height: 26rem;
+    text-align: center;
+    // outline: 1px solid rgb(150, 37, 37);
+
+    background-image: url("../../../public/images/spot-big.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.word {
+    font-size: 1.9em;
+    font-weight: 600;
+
+    color: $button-dark;
+}
+
+.transcription {
+    margin: 20px;
+    font-size: 1.2em;
+    color: $text-color;
+}
+
+.button_translate {
+    @include button (60%, 10px);
+    &:hover {
+        background-color: $button-light;
+    }
+}
