@@ -9,10 +9,7 @@ function App() {
     <div className={style.app}>
       <Header/>
       <Home/>
-      <Game 
-      word = "cat"
-      transcription = "[kæt]"
-      translation = "кошка"/>
+      <Game/>
       <Table/>
     </div>
   );

@@ -6,26 +6,35 @@ export default function Tablerow(props) {
     const {english, transcription, russian, tag} = props;
 
     const [editing, setEditing] = useState();
-    const [value, setValue] = useState("");
+    const [state, setState] = useState(props);
 
-    const editWord = () => {
+    const handleEdit = () => {
         setEditing(!editing)
     }
 
+    const handleCancel = () => {
+        setState({
+            ...props,
+        });
+        handleEdit();
+    }
+
     const handleChangeInput = (event) => {
-        setValue(event.target.value) 
-        console.log(event.target.value) 
+        setState({
+            ...state,
+            [event.target.dataset.name]: event.target.value,
+        });
     }
 
     return (
         <div>
             <div className={style.row}>
-                <div>{english}</div>
-                <div>{transcription}</div>
-                <div>{russian}</div>
-                <div>{tag}</div>
+                <div>{state.english}</div>
+                <div>{state.transcription}</div>
+                <div>{state.russian}</div>
+                <div>{state.tag}</div>
                 <div>
-                    <button onClick={editWord} className={style.button}><EditFilled /></button>
+                    <button onClick={handleEdit} className={style.button}><EditFilled /></button>
                 </div>
                 <div>
                     <button className={style.button}><DeleteFilled/></button>
@@ -36,34 +45,34 @@ export default function Tablerow(props) {
             ? (
                 <div className={style.row}>
                     <input 
-                    name="english"
+                    data-name="english"
                     type="text" 
-                    // value={english} 
-                    onChange={handleChangeInput} 
-                    placeholder={english}/>
+                    value={state.english} 
+                    onChange={handleChangeInput}/>
+
                     <input 
-                    name="transcription"
+                    data-name="transcription"
                     type="text" 
-                    // value={english} 
-                    onChange={handleChangeInput} 
-                    placeholder={transcription}/>
+                    value={state.transcription}
+                    onChange={handleChangeInput} />
+
                     <input 
-                    name="russian"
+                    data-name="russian"
                     type="text" 
-                    // value={english} 
-                    onChange={handleChangeInput} 
-                    placeholder={russian}/>
+                    value={state.russian}
+                    onChange={handleChangeInput} />
+
                     <input 
-                    name="tag"
+                    data-name="tag"
                     type="text" 
-                    // value={english} 
-                    onChange={handleChangeInput} 
-                    placeholder={tag}/>
+                    value={state.tag}
+                    onChange={handleChangeInput} />
+
                     <div>
-                        <button className={style.button_edit}>Save</button>
+                        <button onClick={handleEdit} className={style.button_edit}>Save</button>
                     </div>
                     <div>
-                        <button onClick={editWord} className={style.button_edit}>Cancel</button>
+                        <button onClick={handleCancel} className={style.button_edit}>Cancel</button>
                     </div>
                 </div>) 
             : ""}
