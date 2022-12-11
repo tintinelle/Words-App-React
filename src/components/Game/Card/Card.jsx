@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import style from './card.module.scss';
 
 export default function Card(props) {
@@ -20,4 +19,12 @@ export default function Card(props) {
             </div>
         </div>
     )
+}
+
+Card.defaultProps = {
+    english : "Sorry, there are no words",
+    transcription : "",
+    russian :  "",
+    clicked :  "",
+    setClicked :  ""
 }
