@@ -19,15 +19,13 @@ export default function Table (props) {
         </div>
 
         {
-          data.map((table) =>
+          data.map((item) => 
           <TableRow 
-          key = {table.id} 
-          english = {table.english} 
-          transcription = {table.transcription}
-          russian = {table.russian} 
-          tag = {table.tags}
-          // wordState = {wordState}
-          // setWordState = {setWordState}
+          key = {item.id} 
+          english = {item.english} 
+          transcription = {item.transcription}
+          russian = {item.russian} 
+          tag = {item.tags}
           >
           </TableRow>
 
@@ -37,3 +35,5 @@ export default function Table (props) {
     </div>
   )
 }
+
+  // if ({table.english} !== "dog") {

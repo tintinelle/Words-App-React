@@ -1,10 +1,15 @@
 import style from './header.module.scss';
+import {NavLink, Link} from "react-router-dom";
 
 export default function Header() {
   return (
     <header className={style.header}>
       <div className={style.appname}>
-        <img className={style.logo} src="images/logo.png" alt="logo"/>
+        
+        <Link className={style.logo} to = "/">
+          <img src="images/logo.png" alt="logo"/>
+        </Link>
+
         <div className={style.text}>
           <div>Learn it!</div>
           <div>English vocabulary cards</div>
@@ -12,10 +17,13 @@ export default function Header() {
       </div>
 
       <nav className={style.nav}>
-        <li>Home</li>
-        <li>Wordlist</li>
-        <li>Game</li>
+        <li><NavLink to = "/">Home</NavLink></li>
+        <li><NavLink to = "/wordlist">Wordlist</NavLink></li>
+        <li><NavLink to = "/game">Game</NavLink></li>
       </nav>
     </header>
   )
 }
+
+
+

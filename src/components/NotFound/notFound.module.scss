@@ -1,0 +1,8 @@
+@import './../../style/vars.scss';
+@import './../../style/mixins.scss';
+
+.container {
+    min-height: 34rem;
+    background-image: url("../../../public/images/Group.png");
+    background-size: cover;
+}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import style from './tablerow.module.scss';
 import { EditFilled, DeleteFilled } from '@ant-design/icons';
 
@@ -6,7 +6,11 @@ export default function Tablerow(props) {
     const {english, transcription, russian, tag} = props;
 
     const [editing, setEditing] = useState();
-    const [state, setState] = useState(props);
+    const [state, setState] = useState('');
+
+    useEffect (() => {
+        setState(props)
+    },[props])
 
     const handleEdit = () => {
         setEditing(!editing)
