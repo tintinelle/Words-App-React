@@ -2,10 +2,11 @@ import style from './card.module.scss';
 import { useState } from 'react';
 
 export default function Card(props) {
-    const {english, transcription, russian, clicked, setClicked} = props;
+    const {english, transcription, russian, clicked, setClicked, id, handleCount} = props;
 
     const handleClick = () => {
         setClicked (!clicked);
+        handleCount(id);
     }
 
     return (

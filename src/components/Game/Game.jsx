@@ -1,5 +1,5 @@
 import style from './game.module.scss';
-import Card from './Card/Card';
+import Card from '../../components/Game/Card/Card';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import data from '../../data/data.json';
 import { useState } from 'react';
@@ -53,7 +53,7 @@ export default function Game() {
       newIndex = wordStock.length-1;
     }
 
-    handleCount(wordStock[index].id);
+    // handleCount(wordStock[index].id);
     setClicked(false);
     setIndex(newIndex);
   }
@@ -70,6 +70,9 @@ export default function Game() {
         tag = {wordStock[index].tags}
         clicked = {clicked}
         setClicked = {setClicked}
+
+        id = {wordStock[index].id}
+        handleCount = {handleCount}
       />
 
       <button className={style.button} onClick={() => handleClick('next')}><RightOutlined/></button>
