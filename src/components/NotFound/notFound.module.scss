@@ -2,7 +2,36 @@
 @import './../../style/mixins.scss';
 
 .container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     min-height: 34rem;
     background-image: url("../../../public/images/Group.png");
     background-size: cover;
+
+    font-weight: 500;
+    font-size: 1.2em;
+    color: $text-color;
+
+    img {
+        width: 40%;
+        position: absolute;
+        top: 50px;
+        z-index: -1;
+        // outline: 1px solid rgb(146, 68, 68);
+    }
+
+    div {
+        position: relative;
+        top: 330px;
+
+        a {
+            color: $button-dark;
+            text-decoration: none;
+
+            &:hover {
+                color: $button-light;
+            }
+        }
+    }
 }
