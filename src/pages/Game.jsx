@@ -1,20 +1,25 @@
 import './../style/pageGame.scss';
+import data from '../data/data.json';
 import Card from '../components/Card/Card';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import data from '../data/data.json';
 import { useState } from 'react';
 
 export default function Game() {
   const [learntAll, setLearntAll] = useState(false);
-
   const [learntWordsIds, setLearntWordsIds] = useState([]);
   const [wordsNumber, setWordsNumber] = useState(0);
 
-  const [clicked, setClicked] = useState(false);
+  const [clickedTranslate, setClickedTranslate] = useState(false);
 
   const [wordStock, setWordStock] = useState(data);
 
   const [index, setIndex] = useState(0);
+
+  // переводим карточку и считаем переведенные карточки
+  const handleChange = () => {
+    setClickedTranslate (true);
+    handleCount(wordStock[index].id);
+  }
 
   // считаем количество выученных слов
   const handleCount = (id) => {
@@ -53,7 +58,7 @@ export default function Game() {
       newIndex = wordStock.length-1;
     }
 
-    setClicked(false);
+    setClickedTranslate(false);
     setIndex(newIndex);
   }
 
@@ -67,11 +72,8 @@ export default function Game() {
         transcription = {wordStock[index].transcription}
         russian = {wordStock[index].russian} 
         tag = {wordStock[index].tags}
-        clicked = {clicked}
-        setClicked = {setClicked}
-
-        id = {wordStock[index].id}
-        handleCount = {handleCount}
+        clickedTranslate = {clickedTranslate}
+        handleChange = {handleChange}
       />
 
       <button className="game__button" onClick={() => handleClick('next')}><RightOutlined/></button>
