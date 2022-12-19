@@ -1,7 +1,7 @@
-import style from './game.module.scss';
-import Card from '../../components/Game/Card/Card';
+import './../style/pageGame.scss';
+import Card from '../components/Card/Card';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import data from '../../data/data.json';
+import data from '../data/data.json';
 import { useState } from 'react';
 
 export default function Game() {
@@ -53,15 +53,14 @@ export default function Game() {
       newIndex = wordStock.length-1;
     }
 
-    // handleCount(wordStock[index].id);
     setClicked(false);
     setIndex(newIndex);
   }
 
   return (
-    <div className={style.game}>
+    <div className="game__container">
 
-      <button className={style.button} onClick={() => handleClick('prev')}><LeftOutlined/></button>
+      <button className="game__button" onClick={() => handleClick('prev')}><LeftOutlined/></button>
   
       <Card 
         english = {wordStock[index].english} 
@@ -75,11 +74,11 @@ export default function Game() {
         handleCount = {handleCount}
       />
 
-      <button className={style.button} onClick={() => handleClick('next')}><RightOutlined/></button>
+      <button className="game__button" onClick={() => handleClick('next')}><RightOutlined/></button>
 
       {learntAll
-        ? <div className={style.counter}>You've learnt all the words!</div>
-        : <div className={style.counter}>Words learnt: {wordsNumber} / {wordStock.length}</div>
+        ? <div className="game__counter">You've learnt all the words!</div>
+        : <div className="game__counter">Words learnt: {wordsNumber} / {wordStock.length}</div>
       }
       </div>
   )

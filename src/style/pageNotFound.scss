@@ -1,12 +1,12 @@
-@import './../../style/vars.scss';
-@import './../../style/mixins.scss';
+@import './vars.scss';
+@import './mixins.scss';
 
 .container {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     min-height: 34rem;
-    background-image: url("../../../public/images/Group.png");
+    background-image: url("../../public/images/Group.png");
     background-size: cover;
 
     font-weight: 500;

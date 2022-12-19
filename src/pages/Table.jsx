@@ -1,15 +1,14 @@
-// import { useState } from 'react';
-import style from './table.module.scss';
-import data from '../../data/data.json';
-import TableRow from './Tablerow/Tablerow';
+import './../style/pageTable.scss';
+import data from '../data/data.json';
+import TableRow from '../components/Tablerow/Tablerow';
 
 export default function Table (props) {
   // const [wordState, setWordState] = useState(data);
 
   return (
-    <div className={style.container}>
-      <div className={style.table}>
-        <div className={style.header}>
+    <div className="table__container">
+      <div className="table__tablewrap">
+        <div className="table__header">
           <div>English</div>
           <div>Transcription</div>
           <div>Russian</div>
@@ -35,5 +34,3 @@ export default function Table (props) {
     </div>
   )
 }
-
-  // if ({table.english} !== "dog") {

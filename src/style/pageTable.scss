@@ -1,12 +1,13 @@
-@import './../../style/vars.scss';
+@import './vars.scss';
+@import './mixins.scss';
 
-.container {
-    background-image: url("../../../public/images/background-group.png");
+.table__container {
+    background-image: url("../../public/images/background-group.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.table {
+.table__tablewrap {
     width: 70%;
     margin: auto;
     border-radius: 15px;
@@ -15,7 +16,7 @@
     background-color: $accent-pastel;
 }
 
-.header {
+.table__header {
     display: grid;
     grid-template-columns: repeat(4,20%) 1fr 1fr;
     padding: 10px;

@@ -1,12 +1,9 @@
-@import './../../style/vars.scss';
-@import './../../style/mixins.scss';
-// * {
-//     outline: 1px solid #000;
-// }
-.game {
+@import './vars.scss';
+@import './mixins.scss';
+
+.game__container {
     min-height: 35rem;
-    background-image: url("../../../public/images/background-game.png");
-    // background-repeat: no-repeat;
+    background-image: url("../../public/images/background-game.png");
     background-size: 80%;
     background-position: center;
 
@@ -17,11 +14,11 @@
     flex-wrap: wrap;
 }
 
-.button {
+.game__button {
     @include button (5%, 10px)
 }
 
-.counter {
+.game__counter {
     width: 100%;
     text-align: center;
     font-weight: 400;

@@ -1,22 +1,22 @@
-@import './../../style/vars.scss';
-@import './../../style/mixins.scss';
+@import './vars.scss';
+@import './mixins.scss';
 
-.home {
+.home__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 34rem;
 
-    background-image: url("../../../public/images/Group.png");
+    background-image: url("../../public/images/Group.png");
     background-size: cover;
 }
 
-.title {
+.home__title {
     font-size: 5em;
     color: $title-color;
 }
 
-.about {
+.home__about {
     width: 40%;
     margin-bottom: 40px;
     text-align: center;
@@ -24,7 +24,7 @@
     color: $text-color;
 }
 
-.button {
+.home__button {
     @include button(10%, 15px);
 
     &:hover {

@@ -1,5 +1,5 @@
-@import './../../../style/vars.scss';
-@import './../../../style/mixins.scss';
+@import './../../style/vars.scss';
+@import './../../style/mixins.scss';
 
 .card {
     display: flex;
@@ -8,9 +8,8 @@
     width: 38%;
     min-height: 26rem;
     text-align: center;
-    // outline: 1px solid rgb(150, 37, 37);
 
-    background-image: url("../../../../public/images/spot-big.svg");
+    background-image: url("../../../public/images/spot-big.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

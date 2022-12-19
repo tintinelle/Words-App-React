@@ -1,10 +1,8 @@
 import style from './app.module.scss';
 import Header from './../Header/Header';
-import Home from './../Home/Home';
-import Table from '../Table/Table';
-import Game from '../Game/Game';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import NotFound from '../NotFound/NotFound';
+import { Home, Table, Game, NotFound } from './../../pages';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (

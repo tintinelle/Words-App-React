@@ -1,5 +1,4 @@
 import style from './card.module.scss';
-import { useState } from 'react';
 
 export default function Card(props) {
     const {english, transcription, russian, clicked, setClicked, id, handleCount} = props;
