@@ -2,7 +2,7 @@ import './../style/pageGame.scss';
 import data from '../data/data.json';
 import Card from '../components/Card/Card';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Game() {
   const [learntAll, setLearntAll] = useState(false);
@@ -14,6 +14,15 @@ export default function Game() {
   const [wordStock, setWordStock] = useState(data);
 
   const [index, setIndex] = useState(0);
+
+  // анимация 
+  const [animation, setAnimation] = useState(false);
+  useEffect (() => {
+    setAnimation(true)
+    setTimeout(() => {
+      setAnimation(false)
+    }, 200);
+},[index])
 
   // переводим карточку и считаем переведенные карточки
   const handleChange = () => {
@@ -59,7 +68,7 @@ export default function Game() {
     }
 
     setClickedTranslate(false);
-    setIndex(newIndex);
+    setIndex(newIndex)
   }
 
   return (
@@ -74,6 +83,7 @@ export default function Game() {
         tag = {wordStock[index].tags}
         clickedTranslate = {clickedTranslate}
         handleChange = {handleChange}
+        animation = {animation}
       />
 
       <button className="game__button" onClick={() => handleClick('next')}><RightOutlined/></button>

@@ -26,14 +26,10 @@
 
 .home__button {
     @include button(10%, 15px);
+    text-decoration: none;
 
     &:hover {
         width: 12%;
         font-size: larger;
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;
     }
 }

@@ -6,6 +6,13 @@
     flex-flow: column wrap;
     justify-content: center;
     width: 38%;
+    margin: 10px;
+    // width: 22%;
+    // border-radius: 15px;
+    // border: 1px solid $accent-vivid;
+    // box-shadow: 0 0 15px 5px $accent-vivid;
+    // background: radial-gradient(circle, rgba(255,255,255,1) 20%, $accent-pastel 100%);
+
     min-height: 26rem;
     text-align: center;
 
@@ -33,4 +40,10 @@
     &:hover {
         background-color: $button-light;
     }
+}
+
+.animation {
+    min-height: 24rem;
+    width: 30%;
+    font-size: 0.8em;
 }

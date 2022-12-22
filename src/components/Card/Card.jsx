@@ -1,10 +1,12 @@
 import style from './card.module.scss';
+import classNames from 'classnames';
 
 export default function Card(props) {
-    const {english, transcription, russian, clickedTranslate, handleChange} = props;
+    const {english, transcription, russian, clickedTranslate, handleChange, animation} = props;
+    const classCard = classNames(style.card, animation ? style.animation : "")
 
     return (
-        <div className={style.card}>
+        <div className={classCard}>
             <div className={style.word}>{english}</div>
             <div className={style.transcription}>{transcription}</div>
             <div onClick = {handleChange} className={style.translate}>
@@ -21,6 +23,5 @@ Card.defaultProps = {
     english : "Sorry, there are no words",
     transcription : "",
     russian :  "",
-    clicked :  "",
-    setClicked :  ""
+    clickedTranslate  :  ""
 }
