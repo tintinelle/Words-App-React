@@ -14,7 +14,6 @@ export default function Game() {
   const [wordStock, setWordStock] = useState(data);
 
   const [index, setIndex] = useState(0);
-
   // анимация 
   const [animation, setAnimation] = useState(false);
   useEffect (() => {

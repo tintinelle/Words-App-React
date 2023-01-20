@@ -1,9 +1,15 @@
 import style from './card.module.scss';
 import classNames from 'classnames';
+import { useEffect, useRef } from 'react';
 
 export default function Card(props) {
     const {english, transcription, russian, clickedTranslate, handleChange, animation} = props;
     const classCard = classNames(style.card, animation ? style.animation : "")
+
+    const focusBtn = useRef(null);
+    useEffect (() => {
+        focusBtn.current.focus();
+    }, [english])
 
     return (
         <div className={classCard}>
@@ -12,7 +18,7 @@ export default function Card(props) {
             <div onClick = {handleChange} className={style.translate}>
                 {clickedTranslate 
                 ? <div className={style.word}>{russian}</div>
-                : <button className={style.button_translate}>Show translation</button>
+                : <button ref={focusBtn} className={style.button_translate}>Show translation</button>
                 }
             </div>
         </div>
