@@ -2,7 +2,14 @@ import './../style/pageTable.scss';
 import data from '../data/data.json';
 import TableRow from '../components/Tablerow/Tablerow';
 
-export default function Table (props) {
+// апрол
+import { useContext } from 'react';
+import { Context } from '../context/context';
+
+// export default function Table (props) {
+  export default function Table () {
+  const [valueContext, setValueContext] = useContext(Context);
+
   // const [wordState, setWordState] = useState(data);
 
   return (
@@ -18,7 +25,17 @@ export default function Table (props) {
         </div>
 
         {
-          data.map((item) => 
+          // data.map((item) => 
+          // <TableRow 
+          // key = {item.id} 
+          // english = {item.english} 
+          // transcription = {item.transcription}
+          // russian = {item.russian} 
+          // tag = {item.tags}
+          // >
+          // </TableRow>
+
+          valueContext.map((item) => 
           <TableRow 
           key = {item.id} 
           english = {item.english} 

@@ -6,14 +6,9 @@ import classNames from 'classnames';
 export default function Tablerow(props) {
     const {english, transcription, russian, tag} = props;
 
-    const [editing, setEditing] = useState();
+    const [editing, setEditing] = useState(false);
 
-    const [state, setState] = useState({
-        english: english,
-        transcription: transcription,
-        russian: russian,
-        tag: tag
-    });
+    const [state, setState] = useState({english, transcription, russian, tag});
 
     const [errors, setErrors] = useState({
         english: false,
@@ -35,7 +30,12 @@ export default function Tablerow(props) {
             ...props,
         });
         handleEdit();
-        setErrors(false)
+        setErrors({
+        english: false,
+        transcription: false,
+        russian: false,
+        tag: false
+    })
     }
 
     const handleChangeInput = (event) => {
