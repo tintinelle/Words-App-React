@@ -17,9 +17,9 @@ export default function Tablerow(props) {
         tag: false
     });
 
-    // useEffect (() => {
-    //     setState(props)
-    // },[props])
+    useEffect (() => {
+        setState(props)
+    },[props])
 
     const handleEdit = (e) => {
         setEditing(!editing);

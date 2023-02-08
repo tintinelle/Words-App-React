@@ -2,14 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style/index.css';
 import App from './components/App/App';
-import {ContextProvider} from './context/context';
+//mobx
+import { Provider } from 'mobx-react';
+import WordsStore from "./stores/WordsStore";
+
+const stores = {
+    WordStore: new WordsStore()
+}
+
+// ReactDOM.render(
+//     <Provider {...stores}>
+//         <App />
+//     </Provider>,
+//   document.getElementById('root')
+// );
+// sss
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ContextProvider>
-  <React.StrictMode>
+  // <React.StrictMode>
+  <Provider {...stores}>
     <App />
-  </React.StrictMode>
-  </ContextProvider>
+  </Provider>
+  // </React.StrictMode>
 );
 
