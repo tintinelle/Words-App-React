@@ -3,8 +3,19 @@ import Header from './../Header/Header';
 import { Home, Table, Game, NotFound } from './../../pages';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// 
+import { observer, inject } from 'mobx-react';
+import { useEffect } from 'react';
 
-function App() {
+
+// function App() {
+
+function App({ wordStore }) {
+
+  useEffect(() => {
+    wordStore.loadData();
+  });
+
   return (
     <Router >    
       <div className={style.app}>
@@ -22,4 +33,6 @@ function App() {
   );
 }
 
-export default App;
+// export default App;
+
+export default inject(['wordStore'])(observer(App));

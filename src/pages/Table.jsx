@@ -2,6 +2,9 @@ import './../style/pageTable.scss';
 import data from '../data/data.json';
 import TableRow from '../components/Tablerow/Tablerow';
 
+// 
+import { observer, inject } from 'mobx-react';
+
 
 export default function Table (props) {
 
