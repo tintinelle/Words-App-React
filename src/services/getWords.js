@@ -1,14 +1,14 @@
-class GetWords {
-    static async getWords () {
+class GET {
+    static async getWords() {
         try {
-            const responce = await fetch ('http://itgirlschool.justmakeit.ru/api/words');
-            const data = await responce.json();
+            const responce = await fetch ('http://itgirlschool.justmakeit.ru/api/words')
+            const data = await responce.json()
             return data
         }
-        catch (error) {
+        catch(error) {
             console.error(error)
         }
     }
 }
 
-export default GetWords
+export default GET;

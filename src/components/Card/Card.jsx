@@ -1,23 +1,24 @@
 import style from './card.module.scss';
 import classNames from 'classnames';
 import { useEffect, useRef } from 'react';
+import { observer } from "mobx-react-lite";
+import { inject } from 'mobx-react';
 
-export default function Card(props) {
-    const {english, transcription, russian, clickedTranslate, handleChange, animation} = props;
+function Card({WordsStore, index, clickedTranslate, handleChange, animation}) {
     const classCard = classNames(style.card, animation ? style.animation : "")
 
     const focusBtn = useRef(null);
     useEffect (() => {
         focusBtn.current.focus();
-    }, [english])
+    }, [index])
 
     return (
         <div className={classCard}>
-            <div className={style.word}>{english}</div>
-            <div className={style.transcription}>{transcription}</div>
+            <div className={style.word}>{WordsStore.words[index].english}</div>
+            <div className={style.transcription}>{WordsStore.words[index].transcription}</div>
             <div onClick = {handleChange} className={style.translate}>
                 {clickedTranslate 
-                ? <div className={style.word}>{russian}</div>
+                ? <div className={style.word}>{WordsStore.words[index].russian}</div>
                 : <button ref={focusBtn} className={style.button_translate}>Show translation</button>
                 }
             </div>
@@ -31,3 +32,4 @@ Card.defaultProps = {
     russian :  "",
     clickedTranslate  :  ""
 }
+export default inject(['WordsStore'])(observer(Card));

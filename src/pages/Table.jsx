@@ -1,12 +1,13 @@
 import './../style/pageTable.scss';
-import data from '../data/data.json';
+// import data from '../data/data.json';
 import TableRow from '../components/Tablerow/Tablerow';
+// import { useEffect } from 'react';
 
-// 
-import { observer, inject } from 'mobx-react';
-
-
-export default function Table (props) {
+// mobX
+import { observer } from "mobx-react-lite";
+import { inject } from "mobx-react";
+  
+const Table = inject(['WordsStore'])(observer(({ WordsStore }) => {
 
   return (
     <div className="table__container">
@@ -21,19 +22,17 @@ export default function Table (props) {
         </div>
 
         {
-          data.map((item) => 
+          WordsStore.words.map((word) => 
           <TableRow 
-          key = {item.id} 
-          english = {item.english} 
-          transcription = {item.transcription}
-          russian = {item.russian} 
-          tag = {item.tags}
+          key = {word.id} 
+          word={word}
           >
           </TableRow>
-
           )
         }
       </div>
     </div>
   )
-}
+}));
+
+export default Table;

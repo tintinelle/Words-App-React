@@ -7,7 +7,7 @@ import { Provider } from 'mobx-react';
 import WordsStore from "./stores/WordsStore";
 
 const stores = {
-    WordStore: new WordsStore()
+    WordsStore: new WordsStore()
 }
 
 // ReactDOM.render(

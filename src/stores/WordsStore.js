@@ -1,15 +1,23 @@
-import {action, observable} from 'mobx';
+import { makeAutoObservable } from 'mobx';
+import GET from '../services/getWords';
+import DEL from '../services/deleteWord';
+import EDIT from '../services/editWord';
 
-// class WordsStore {
-//     @observable words = [];
-
-//     @action addWord = (word) => {
-//         return this.words.push(word)
-//     }
-//     @action removeWord = (index) => {
-//         return this.words.splice(index, 1)
-//     }
-// }
-
-// export default WordsStore;
-
+export default class Words {
+    constructor() {
+        this.words = [];
+        makeAutoObservable(this)
+        this.loadData()
+    }
+    loadData = async () => {
+        const data = await GET.getWords()
+        this.words = data
+    }
+    deleteWord = async (id) => {
+        this.words = this.words.filter(word => word.id !== id)
+        await DEL.deleteWord(id)
+    }
+    editWord = async (word) => {
+        await EDIT.editWord(word.id);
+    }
+}

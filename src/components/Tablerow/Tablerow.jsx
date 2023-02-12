@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import style from './tablerow.module.scss';
 import { EditFilled, DeleteFilled } from '@ant-design/icons';
 import classNames from 'classnames';
+import { observer } from "mobx-react-lite";
+import { inject } from 'mobx-react';
 
-export default function Tablerow(props) {
-    const {english, transcription, russian, tag} = props;
+function Tablerow({ WordsStore, word }) {
 
     const [editing, setEditing] = useState(false);
 
-    const [state, setState] = useState({english, transcription, russian, tag});
+    const [state, setState] = useState(word);
 
     const [errors, setErrors] = useState({
         english: false,
@@ -18,23 +19,24 @@ export default function Tablerow(props) {
     });
 
     useEffect (() => {
-        setState(props)
-    },[props])
+        setState(word)
+    },[word])
 
     const handleEdit = (e) => {
         setEditing(!editing);
+        WordsStore.editWord(state);
     }
 
     const handleCancel = () => {
         setState({
-            ...props,
+            ...WordsStore.words,
         });
         handleEdit();
         setErrors({
         english: false,
         transcription: false,
         russian: false,
-        tag: false
+        tags: false
     })
     }
 
@@ -70,16 +72,19 @@ export default function Tablerow(props) {
             ...errors,
             [input.dataset.name]: true,
         })
-        // console.log(errors)
-        // console.log(input.dataset.name)
     }
 
-    const validateFlag = !errors.english && !errors.transcription && !errors.russian && !errors.tag;
+    // mobX
+    const onDelete = () => {
+        WordsStore.deleteWord(word.id);
+    };
+
+    const validateFlag = !errors.english && !errors.transcription && !errors.russian && !errors.tags;
 
     const errorInputEnglish = classNames(errors.english ? style.error : "");
     const errorInputTranscription = classNames(errors.transcription ? style.error : "");
     const errorInputRussian = classNames(errors.russian ? style.error : "");
-    const errorInputTag = classNames(errors.tag ? style.error : "");
+    const errorInputTag = classNames(errors.tags ? style.error : "");
 
     return (
         <div>
@@ -87,14 +92,14 @@ export default function Tablerow(props) {
                 <div>{errors.english ? 'Пустое поле' : state.english}</div>
                 <div>{errors.transcription ? 'Пустое поле' : state.transcription}</div>
                 <div>{errors.russian ? 'Пустое поле' : state.russian}</div>
-                <div>{errors.tag ? 'Пустое поле' : state.tag}</div>
+                <div>{errors.tags ? 'Пустое поле' : state.tags}</div>
                 <div>
                 {validateFlag &&
                     <button onClick={handleEdit} className={style.button}><EditFilled /></button>
                 }
                 </div>
                 <div>
-                    <button className={style.button}><DeleteFilled/></button>
+                    <button onClick={onDelete} className={style.button}><DeleteFilled/></button>
                 </div>
             </div>
 
@@ -124,9 +129,9 @@ export default function Tablerow(props) {
                     onChange={handleChangeInput} />
 
                     <input 
-                    data-name="tag"
+                    data-name="tags"
                     type="text" 
-                    value={state.tag}
+                    value={state.tags}
                     className = {errorInputTag}
                     onChange={handleChangeInput} />
 
@@ -146,3 +151,5 @@ export default function Tablerow(props) {
         </div>
     )
 }
+
+export default inject(['WordsStore'])(observer(Tablerow));
