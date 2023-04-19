@@ -3,12 +3,11 @@
 _Learn it is a SPA built with React that serves to learn English words with the help of cards._
 
 ## Result
-<br><br>
 <img width="80%" alt="HomePage" src="../main/screenshots/home.png">
 <img width="80%" alt="ErrorPage" src="../main/screenshots/game.png">
 <img width="80%" alt="GamePage" src="../main/screenshots/table.png">
 <img width="80%" alt="GamePage" src="../main/screenshots/error.png">
-<br><br>
+
 
 ## Technology stack
 <p>
